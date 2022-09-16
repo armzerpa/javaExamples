@@ -9,56 +9,6 @@ public class Main {
         arraysExamples();
         listExamples();
         streamExamples();
-
-        /*
-        ArrayList<String> firstArrayList = new ArrayList<>();
-        firstArrayList.add("Hola");
-        firstArrayList.add("mundo");
-
-        System.out.println(firstArrayList);
-
-        List<String> collection = Arrays.asList("a", "b", "c");
-
-        int reducedParams = Stream.of(1, 2, 3)
-                .reduce(10, (a, b) -> a + b, (a, b) -> {
-                    System.out.println("combiner was called");
-                    return a + b;
-                });
-
-        System.out.println(reducedParams);
-
-        List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
-        List<String> filtered = strings.stream()
-                .filter(string -> !string.isEmpty())
-                .collect(Collectors.toList());
-
-        System.out.println(filtered);
-
-        //int[] intArray = new int[20];
-        int[] intArray2 = new int[]{ 1,2,3,4,5,6,7,8,9,10 };
-        List<Integer> listInt = Arrays.stream(intArray2)
-                .boxed()
-                .collect(Collectors.toList());
-        listInt.add(22);
-        // java 16
-        //List<Integer> listInt2 = Arrays.stream(intArray2).boxed().toList();
-
-        List<Integer> list = Arrays.asList(new Integer[] {1, 2, 3, 4});
-        System.out.println(list);
-        Collections.sort(list, Comparator.reverseOrder());
-        System.out.println(list);
-
-        int[] numbers = new int[] { 1, 2, 3 };
-
-        //List<Integer> listInt = Arrays.asList(intArray2);
-        Collections.sort(listInt, Collections.reverseOrder());
-        // Displaying elements in Stream
-        Arrays.stream(intArray2).forEach(str -> System.out.print(str + " "));
-
-        //System.out.println(listInt);
-
-        listInt.stream().forEach(s -> System.out.print(s + " "));
-        */
     }
 
     private static void streamExamples() {
@@ -74,6 +24,7 @@ public class Main {
         values.add("car");
         values.add("mac");
         values.add("cinnabon");
+
 
         List<String> filterList = values.stream().filter(v -> v.startsWith("c")).collect(Collectors.toList());
         System.out.println(filterList);
@@ -153,6 +104,11 @@ public class Main {
 
         String[] strings = someList.stream().toArray(String[]::new);
         System.out.println(strings[0]);
+
+        List<String> countries = Arrays.asList("Germany", "Panama", "Australia");
+        for (int i = 0; i < countries.size(); i++) {
+            System.out.println(countries.get(i));
+        }
     }
 
     private static void arraysExamples() {
