@@ -6,9 +6,43 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
+        System.out.println("armando test");
+
         arraysExamples();
         listExamples();
         streamExamples();
+        stringExamples();
+    }
+
+    public int[] twoSum(int[] nums, int target) {
+        // Use a HashMap to store value-to-index mapping
+        Map<Integer, Integer> numMap = new HashMap<>();
+
+        // Iterate through the array
+        for (int i = 0; i < nums.length; i++) {
+            // Calculate the complement needed to reach the target
+            int complement = target - nums[i];
+
+            // Check if the complement exists in the map
+            if (numMap.containsKey(complement)) {
+                // Return the indices of the two numbers
+                return new int[] {numMap.get(complement), i};
+            }
+
+            // Store the current number and its index
+            numMap.put(nums[i], i);
+        }
+
+        // If no solution is found (though problem guarantees one exists)
+        return new int[0];
+    }
+
+    private static void stringExamples() {
+        String str = "cat";
+        char[] cArray = str.toCharArray();
+        for (int i = 0; i<cArray.length; i++) {
+            System.out.println(cArray[i]);
+        }
     }
 
     private static void streamExamples() {
@@ -130,6 +164,10 @@ public class Main {
         } catch (Exception ex) {
             //outOfIndex exception
             System.out.println(ex);
+        }
+
+        for (int i = 0; i < intArray.length; i++) {
+            System.out.println(intArray[i]);
         }
 
         //multidimensional array
